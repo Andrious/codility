@@ -3,7 +3,20 @@ import 'dart:convert' show jsonEncode;
 
 import '../../_view.dart';
 
+/// https://leetcode.com/problems/palindrome-linked-list/
 ///
+/// Given the head of a singly linked list, return true if it is a
+/// palindrome or false otherwise.
+///
+/// Example 1:
+///
+/// Input: head = [1,2,2,1]
+/// Output: true
+///
+/// Example 2:
+///
+/// Input: head = [1,2]
+/// Output: false
 class Solution extends StatelessWidget {
   const Solution({Key? key}) : super(key: key);
 
@@ -19,19 +32,28 @@ class Solution extends StatelessWidget {
 }
 
 bool isPalindrome(ListNode? head) {
-  List<int> numbers = [];
+  final values = <int>[];
   while (head != null) {
-    numbers.add(head.val);
+    values.add(head.val);
     head = head.next;
   }
-  // Just go half way and compare the starting from the ends.
-  for (int i = 0; i < (numbers.length / 2).floor(); i++) {
-    if (numbers[i] != numbers[numbers.length - 1 - i]) {
-      return false;
-    }
-  }
-  return true;
+  return values.join('') == values.reversed.join('');
 }
+
+// bool isPalindrome(ListNode? head) {
+//   List<int> numbers = [];
+//   while (head != null) {
+//     numbers.add(head.val);
+//     head = head.next;
+//   }
+//   // Just go half way and compare the starting from the ends.
+//   for (int i = 0; i < (numbers.length / 2).floor(); i++) {
+//     if (numbers[i] != numbers[numbers.length - 1 - i]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
 
 ListNode? reverseLinkedList(ListNode? head) {
   ListNode? newHead;

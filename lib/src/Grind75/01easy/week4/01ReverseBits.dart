@@ -5,6 +5,19 @@ import 'dart:convert' show jsonEncode;
 
 import '../../_view.dart';
 
+/// https://leetcode.com/problems/reverse-bits/
+///
+/// Reverse bits of a given 32 bits unsigned integer.
+///
+/// Note:
+///
+/// Note that in some languages, such as Java, there is no unsigned integer
+/// type. In this case, both input and output will be given as a signed integer type.
+/// They should not affect your implementation, as the integer's
+/// internal binary representation is the same, whether it is signed or unsigned.
+/// In Java, the compiler represents the signed integers using 2's complement notation.
+/// Therefore, in Example 2 above, the input represents
+/// the signed integer -3 and the output represents the signed integer -1073741825.
 ///
 class Solution extends StatelessWidget {
   const Solution({Key? key}) : super(key: key);
@@ -20,18 +33,6 @@ class Solution extends StatelessWidget {
     // return Text(data);
   }
 }
-
-/// Reverse bits of a given 32 bits unsigned integer.
-///
-/// Note:
-///
-/// Note that in some languages, such as Java, there is no unsigned integer
-/// type. In this case, both input and output will be given as a signed integer type.
-/// They should not affect your implementation, as the integer's
-/// internal binary representation is the same, whether it is signed or unsigned.
-/// In Java, the compiler represents the signed integers using 2's complement notation.
-/// Therefore, in Example 2 above, the input represents
-/// the signed integer -3 and the output represents the signed integer -1073741825.
 
 BigInt reverseBits(BigInt n) {
   var m = BigInt.from(0.toUnsigned(32));

@@ -3,6 +3,9 @@ import 'dart:convert' show jsonEncode;
 
 import '../../_view.dart';
 
+/// Middle of the Linked List
+///
+/// https://leetcode.com/problems/middle-of-the-linked-list/
 /// Given the head of a singly linked list, return the middle node of the linked list.
 /// If there are two middle nodes, return the second middle node.
 class Solution extends StatelessWidget {
@@ -39,9 +42,8 @@ ListNode? middleNode(ListNode? head) {
   while (fast != null && fast.next != null) {
     // Continue going to the current's next next (Two Nodes ahead of current)
     fast = fast.next?.next;
-    // You're 'next' is always 'half' the progress of fast.
+    // slow's 'next' is always 'half' the progress of fast.
     slow = slow?.next;
   }
-
   return slow;
 }

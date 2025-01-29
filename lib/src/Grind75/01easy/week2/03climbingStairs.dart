@@ -10,13 +10,13 @@ class Solution extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var result = climbStairs(3);
-    result = climbStairs(0);
+//    result = climbStairs(0);
     final data = jsonEncode(result);
     return Text(data);
   }
 }
 
-///  how many distinct ways
+/// how many distinct ways
 /// it's a fibonacci.
 /// the total number of ways
 /// is equal to the sum of the total number of ways
@@ -26,7 +26,7 @@ int climbStairs(int n) {
   int a = 1, b = 1;
   // n just happens to equal the number of iterations to go through
   while (n-- > 0) {
-    a = (b += a) - a;
+    a = (b += a) - a; // a = (b = b + a) - a
 //    iter++;
   }
   return a;

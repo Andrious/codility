@@ -4,7 +4,17 @@ import 'dart:math';
 
 import '../../_view.dart';
 
+/// https://leetcode.com/problems/maximum-depth-of-binary-tree/
 ///
+/// Given the root of a binary tree, return its maximum depth.
+///
+/// A binary tree's maximum depth is the number of nodes along the
+/// longest path from the root node down to the farthest leaf node.
+/// Input: root = [3,9,20,null,null,15,7]
+/// Output: 3
+
+/// Input: root = [1,null,2]
+/// Output: 2
 class Solution extends StatelessWidget {
   const Solution({Key? key}) : super(key: key);
 
@@ -18,16 +28,6 @@ class Solution extends StatelessWidget {
   }
 }
 
-///
-/// Given the root of a binary tree, return its maximum depth.
-///
-/// A binary tree's maximum depth is the number of nodes along the
-/// longest path from the root node down to the farthest leaf node.
-/// Input: root = [3,9,20,null,null,15,7]
-/// Output: 3
-
-/// Input: root = [1,null,2]
-/// Output: 2
 int maxDepth(TreeNode? root) {
   // Gets down to the bottom of the branch first then 'counts' back up.
   if (root == null) {

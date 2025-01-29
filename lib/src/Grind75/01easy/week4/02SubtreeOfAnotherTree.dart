@@ -3,20 +3,8 @@ import 'dart:convert' show jsonEncode;
 
 import '../../_view.dart';
 
+/// https://leetcode.com/problems/subtree-of-another-tree/
 ///
-class Solution extends StatelessWidget {
-  const Solution({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    // root = [6, 2, 8, 0, 4, 7, 9, null, null, 3, 5];
-    // treeNode = createTree(root, 0);
-    var result = [];
-    final data = jsonEncode(result);
-    return Text(data);
-  }
-}
-
 /// Given the roots of two binary trees root and subRoot,
 /// return true if there is a subtree of root with the same structure
 /// and node values of subRoot and false otherwise.
@@ -24,6 +12,29 @@ class Solution extends StatelessWidget {
 /// A subtree of a binary tree tree is a tree that consists of a node in tree
 /// and all of this node's descendants. The tree tree could also
 /// be considered as a subtree of itself.
+///
+/// Example 1:
+///
+/// Input: root = [3,4,5,1,2], subRoot = [4,1,2]
+/// Output: true
+///
+/// Example 2:
+///
+/// Input: root = [3,4,5,1,2,null,null,null,null,0], subRoot = [4,1,2]
+/// Output: false
+///
+class Solution extends StatelessWidget {
+  const Solution({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final root = createTree([3, 4, 5, 1, 2], 0);
+    final subRoot = createTree([4, 1, 2], 0);
+    var result = isSubtree(root, subRoot);
+    final data = jsonEncode(result);
+    return Text(data);
+  }
+}
 
 bool isSubtree(TreeNode? root, TreeNode? subRoot) {
   if (root == null) return false;

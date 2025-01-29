@@ -3,7 +3,22 @@ import 'dart:convert' show jsonEncode;
 
 import '../../_view.dart';
 
+/// https://leetcode.com/problems/longest-palindrome/
 ///
+/// Given a string s which consists of lowercase or uppercase letters, return the length of the longest palindrome that can be built with those letters.
+///
+/// Letters are case sensitive, for example, "Aa" is not considered a palindrome here.
+///
+/// Example 1:
+///
+/// Input: s = "abccccdd"
+/// Output: 7
+/// Explanation: One longest palindrome that can be built is "dccaccd", whose length is 7.
+/// Example 2:
+///
+/// Input: s = "a"
+/// Output: 1
+/// Explanation: The longest palindrome that can be built is "a", whose length is 1.
 class Solution extends StatelessWidget {
   const Solution({Key? key}) : super(key: key);
 
@@ -24,7 +39,7 @@ int longestPalindrome(String s) {
   Map<String, int> charCounts = {};
   int maxLength = 0;
   for (int i = 0; i < s.length; i++) {
-    String char = s[i];
+    final char = s[i];
     // Map must be case-sensitive.
     // Slick! Map returns null and so use ??
     charCounts[char] = (charCounts[char] ?? 0) + 1;
@@ -37,6 +52,8 @@ int longestPalindrome(String s) {
   }
   // Cool! Test integer is even or not!
   final evenCount = maxLength.isEven;
+  4.gcd(2);
+
   // Integer
   //
   // isOdd

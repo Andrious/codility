@@ -3,26 +3,10 @@ import 'dart:convert' show jsonEncode;
 
 import '../../_view.dart';
 
-///
-class Solution extends StatelessWidget {
-  const Solution({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    var nums = [1, 2, 3, 1];
-//    nums = [1, 2, 3, 4];
-//    nums = [1, 7, 1, 3, 3, 4, 3, 2, 4, 2];
-    var result = containsDuplicate(nums);
-    final data = jsonEncode(result);
-    return Text(data);
-  }
-}
-
+/// https://leetcode.com/problems/contains-duplicate/
 ///
 /// Given an integer array nums, return true if any value appears
 /// at least twice in the array, and return false if every element is distinct.
-///
-///
 ///
 /// Example 1:
 ///
@@ -38,6 +22,19 @@ class Solution extends StatelessWidget {
 /// Output: true
 ///
 ///
+class Solution extends StatelessWidget {
+  const Solution({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var nums = [1, 2, 3, 1];
+//    nums = [1, 2, 3, 4];
+//    nums = [1, 7, 1, 3, 3, 4, 3, 2, 4, 2];
+    var result = containsDuplicate(nums);
+    final data = jsonEncode(result);
+    return Text(data);
+  }
+}
 
 bool containsDuplicate(List<int> numbers) {
   // toSet() will remove duplicates! They're can be no duplicates!

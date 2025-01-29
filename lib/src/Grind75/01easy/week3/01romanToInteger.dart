@@ -3,7 +3,19 @@ import 'dart:convert' show jsonEncode;
 
 import '../../_view.dart';
 
+/// https://leetcode.com/problems/roman-to-integer/
 ///
+/// Input: s = "III"
+/// Output: 3
+/// Explanation: III = 3.
+///
+/// Input: s = "LVIII"
+/// Output: 58
+/// Explanation: L = 50, V= 5, III = 3.
+///
+/// Input: s = "MCMXCIV"
+/// Output: 1994
+/// Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 class Solution extends StatelessWidget {
   const Solution({Key? key}) : super(key: key);
 
@@ -18,21 +30,8 @@ class Solution extends StatelessWidget {
   }
 }
 
-///
-/// Input: s = "III"
-/// Output: 3
-/// Explanation: III = 3.
-///
-/// Input: s = "LVIII"
-/// Output: 58
-/// Explanation: L = 50, V= 5, III = 3.
-///
-/// Input: s = "MCMXCIV"
-/// Output: 1994
-/// Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
-
 int romanToInt(String s) {
-  //
+  // You'll go through this list in this order and remove those not found.
   final romans = <String, int>{
     'IV': 4,
     'IX': 9,
@@ -53,8 +52,10 @@ int romanToInt(String s) {
 
   for (final roman in romans.entries) {
     // Count how many times this roman numeral appears in the String.
-    final count = roman.key.allMatches(s).length;
+    final match = roman.key.allMatches(s);
+    final count = match.length;
     // Multiply its counterpart numeric value by that count
+    // In most instances, count will be zero
     number += roman.value * count; // n * 0 = 0
     // Remove the Roman number from the string
     // so as not to repeat I in IV and IX, etc.

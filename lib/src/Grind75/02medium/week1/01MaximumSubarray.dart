@@ -5,7 +5,9 @@ import 'dart:convert' show jsonEncode;
 
 import '../../_view.dart';
 
-///
+/// Given an integer array nums, find the subarray
+/// with the largest sum, and return its sum.
+
 class Solution extends StatelessWidget {
   const Solution({Key? key}) : super(key: key);
 
